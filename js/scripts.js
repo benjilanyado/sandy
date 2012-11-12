@@ -4,7 +4,7 @@ $(document).ready(function(){
 ///// TILES & UP/DOWN BUTTONS /////
 
 
-var verticalimages = [	"0px", "627px", "1254px", "1881px", "2508px", "3135px", "3762px", "4389px", "5016px"];
+var verticalimages = [	"0px", "627px", "1254px", "1881px", "2508px", "3135px", "3762px", "4389px", "5016px", "5643px"];
 
 var lightboxCurrent = 0;
 
@@ -19,7 +19,6 @@ function downclick() {
 
  		$("#downbutton").fadeOut()
  		$("#upbutton").fadeIn()
- 		$("rightbutton").fadeIn()
 
  	}
 
@@ -33,9 +32,9 @@ function upclick() {
 
  	$("#internalwrapper").animate({"bottom": verticalimages[lightboxCurrent]}, 1000)
 
- 	$("#downbutton").fadeIn()
+ 	
 
- 	if (lightboxCurrent==(verticalimages.length - 9)) {  //NB  "-5" needs to be whatever length of array is
+ 	if (lightboxCurrent==(verticalimages.length - 10)) {  //NB  "-5" needs to be whatever length of array is
 
  		$("#upbutton").fadeOut()
  	}
@@ -264,6 +263,72 @@ $("#image6").click(function(event) {
 
   });
 
+// MINI IMAGE CONTROLS
+
+
+  var miniImages = [ "0px", "-940px", "-1880px", "-2820px", "-3760px", "-4700px"];
+
+  var credits = ['<a href="http://www.flickr.com/photos/tomvu/8140141769/">Hurricane Sandy, the next morning in DUMBO, by Barry Yanowitz</a>', 
+                  '<a href="http://www.flickr.com/photos/mtaphotos/8165381620/in/photostream/">SouthFerryStationDamage110712, by MTAPhotos</a>',
+                  '<a href="http://www.flickr.com/photos/89474029@N07/8147459081/in/photostream/">Hurricane Sandy Survivor, by Philip Bell</a>',
+                  '<a href="http://www.flickr.com/photos/usnavy/8162096921/in/photostream/">Sailors assist with Hurricane Sandy recovery efforts, by Official U.S. Navy Imagery</a>',
+                  '<a href="http://www.flickr.com/photos/ennuiislife/8177796865/in/photostream/">Far Rockaway, Queens, New York, by Kate Gardiner</a>',
+                  '<a href="http://www.flickr.com/photos/iakoubtchik/8143503834/in/photostream/">Vehicles Trapped, by Iakoubtchik</a>']
+
+  var lightboxMiniCurrent = 0;
+
+
+    function rightclickmini() {
+
+  lightboxMiniCurrent += 1
+
+  $("#morningwide").animate({"left": miniImages[lightboxMiniCurrent]}, 500)
+  $("#copybox6h1").html(credits[lightboxMiniCurrent])
+
+  $("#minileft").fadeIn()
+  $("#headline6").fadeOut()
+
+  if (lightboxMiniCurrent==(miniImages.length -1)) {
+
+    $("#miniright").fadeOut()
+  }
+
+
+}
+
+function leftclickmini() {
+
+
+  lightboxMiniCurrent -= 1
+
+  $("#morningwide").animate({"left": miniImages[lightboxMiniCurrent]}, 500)
+  $("#copybox6h1").html(credits[lightboxMiniCurrent])
+
+  $("#miniright").fadeIn()
+
+  if (lightboxMiniCurrent==(miniImages.length - 6)) {
+
+    $("#minileft").fadeOut()
+  }
+
+}
+
+  $("#miniright").click(function(event){
+
+    event.preventDefault();
+
+      rightclickmini()
+
+  })
+
+  $("#minileft").click(function(event){
+
+    event.preventDefault();
+
+      leftclickmini()
+
+  })
+
 
 ///// Tile 7 ////
 
@@ -276,6 +341,69 @@ $("#image7").click(function(event) {
   });
 
 ///tile 8
+
+var miniImages2 = [ "0px", "-940px", "-1880px", "-2820px", "-3760px"];
+
+  var credits2 = ['<a href="http://www.flickr.com/photos/sdettling/8142765504/in/photostream/">Untitled, by Stephen Dettling</a>', 
+                  '<a href="http://www.flickr.com/photos/usnavy/8161187856/in/photostream/">Seabees assist with Hurricane Sandy recovery, by Official U.S. Navy Imagery</a>',
+                  '<a href="http://www.flickr.com/photos/usfwsnortheast/8151150511/in/photostream/">Aftermath of extensive flooding along New Jersey shore </br> by U. S. Fish and Wildlife Service - Northeast Region</a>',
+                  '<a href="http://www.flickr.com/photos/59949757@N06/8139794132/">Hurricane Sandy - NC12, by NCDOTcommunications</a>',
+                  '<a href="http://www.flickr.com/photos/ennuiislife/8177796865/in/photostream/">Storm damage along the New Jersey coast</br> by U. S. Fish and Wildlife Service - Northeast Region</a></a>'
+                  ]
+
+  var lightboxMiniCurrent2 = 0;
+
+
+  function rightclickmini2() {
+
+  lightboxMiniCurrent2 += 1
+
+  $("#damagewide").animate({"left": miniImages2[lightboxMiniCurrent2]}, 500)
+  $("#copybox8h1").html(credits2[lightboxMiniCurrent2])
+
+  $("#minileft2").fadeIn()
+  $("#headline8").fadeOut()
+
+  if (lightboxMiniCurrent2==(miniImages2.length -1)) {
+
+    $("#miniright2").fadeOut()
+  }
+
+
+}
+
+function leftclickmini2() {
+
+
+  lightboxMiniCurrent2 -= 1
+
+  $("#damagewide").animate({"left": miniImages2[lightboxMiniCurrent2]}, 500)
+  $("#copybox8h1").html(credits2[lightboxMiniCurrent2])
+
+  $("#miniright2").fadeIn()
+
+  if (lightboxMiniCurrent2==(miniImages2.length - 5)) {
+
+    $("#minileft2").fadeOut()
+  }
+
+}
+
+  $("#miniright2").click(function(event){
+
+    event.preventDefault();
+
+      rightclickmini2()
+
+  })
+
+  $("#minileft2").click(function(event){
+
+    event.preventDefault();
+
+      leftclickmini2()
+
+  })
 
 $("#image8").click(function(event) {        
 
@@ -342,138 +470,23 @@ $("#closebutton9").click(function(event) {
   });
 
 
+//// tile 10
 
-
-
-
-
-///////// MEDIA FADE IN & OUT /////////
-
-
-  // $("#DIVTOCLICK").click(function(event) {        
-
-  //   event.preventDefault();
-
-  //   $("#FADEOUTDIV").fadeOut();
-
-  //   $("#FADEINDIV").fadeIn(function(){
-      
-  //     $("#MEDIAHOLDER").html('IFRAME')
-
-  //   });
-
-    
-  // });
-
-
-  // $("CLOSEBUTTON?").click(function(event) {        
-
-  //   event.preventDefault();
-
-  //   $("#FADEOUTDIV").fadeOut(function(){
-      
-  //     $("#MEDIAHOLDER").html('')
-
-  //   });
-
-    
-  // });
-
-///////// END OF MEDIA FADE IN & OUT /////////
-
-
-///////// EXPANDOR DIV CONTROLS ////////
-
- 
- 
-
-  // });
-
-  // $("#CLOSEBUTTON").click(function(event){
-
-  //   event.preventDefault();
-  //   $("#EXPANDORDIV").css("width", "MINWIDTH");
-  //   $("#EXPANDORDIV").css("height", "MINHEIGHT");
-  //   $("#CLOSEBUTTON").fadeOut()
-
-
-  // });
-
-///////// END OF EXPANDOR DIV CONTROLS ////////
-
-///////// TOGGLE BUTTON - (NUMBERS?) ////////
-
-
-
-///////// END OF TOGGLE BUTTON - (NUMBERS?) ////////
-
-///////// LEFT & RIGHT ANIMATE ////////
-
-
-
-
-
-
-/////// END OF LEFT & RIGHT BUTTONS ///////
-
-////DOWNBUTTON /////
-
- $("#downbutton").on({
-  'click': function(event) {
-
-if ($("#internalwrapper").css('bottom') == '5013px'){
+$("#image10").click(function(event) {        
 
     event.preventDefault();
 
-    $("#internalwrapper").animate({"bottom": "6270px"}, 1000, function(){
+    $("#copybox10").fadeToggle()
 
-      $("#titleswrapper").animate({"bottom": "2300px"}, 35000, "linear", function(){
+  });
 
-        $("#titleswrapper").css("bottom", "0px")
-
-          $("#titleswrapper").animate({"bottom": "2300px"}, 35000, "linear", function (){
-
-            $("#titleswrapper").css("bottom", "0px")
-
-            $("#titleswrapper").animate({"bottom": "2300px"}, 35000, "linear", function () {
-
-              $("#titleswrapper").css("bottom", "548px")
-              $("#rightside").css("overflow", "scroll")
-
-
-            });
-
-          });
-
-      });
-
-    });	
-
-}
-
-}
-
-});
-
-
-////////FINAL CONTROLS ///////
-
-
- $("#oneup").click(function(event){
-
-    $("#internalwrapper").animate({"bottom": "5013px"}, 1000)
-    $("#tweetbutton").fadeOut()
-
-   });
-
-    $("#backtotop").click(function(event){
+$("#backtotop").click(function(event){
 
     window.location.reload()
 
    });
 
 
- !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
 
 

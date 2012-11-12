@@ -23,10 +23,10 @@ body {
 #internalwrapper {
 
 	position: relative;
-	bottom:0px;
+	bottom: 0px;
 }
 
-#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9, #tile10, #tile11 {
+#tile1, #tile2, #tile3, #tile4, #tile5, #tile6, #tile7, #tile8, #tile9, #tile10 {
 
 	position: relative;
 	width: 940px;
@@ -108,10 +108,7 @@ body {
 	padding: 10px;
 }
 
-#tile10 {
 
-	background: red;
-}
 
 #leftside {
 
@@ -703,6 +700,33 @@ body {
 
 /*Tile 6*/
 
+#morningwide {
+
+	position: absolute;
+	left: 0px;
+}
+
+#miniright {
+
+	position: absolute;
+	right: 10px;
+	top: 290px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 10px;
+
+}
+
+#minileft {
+
+	position: absolute;
+	left: 10px;
+	top: 290px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 10px;
+	display: none;
+
+}
+
 #date6  {
 
 	position: absolute;
@@ -817,6 +841,33 @@ body {
 }
 
 /*tile 8*/
+
+#damagewide {
+
+	position: absolute;
+	left: 0px;
+}
+
+#miniright2 {
+
+	position: absolute;
+	right: 10px;
+	top: 290px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 10px;
+
+}
+
+#minileft2 {
+
+	position: absolute;
+	left: 10px;
+	top: 290px;
+	background: rgba(0, 0, 0, 0.4);
+	padding: 10px;
+	display: none;
+
+}
 
 #date8 {
 
@@ -998,6 +1049,67 @@ body {
 	top: -10px;
 	right: -10px;
 }
+
+/*TILE 10*/
+
+
+
+#stories {
+
+	position: absolute;
+	bottom: 10px;
+	right:	10px;
+	color: white;
+	font-size: 25px ;
+}
+
+#stories a {
+
+	color: white;
+	text-decoration: none
+}
+
+
+#stories a:hover {
+
+	color: orange
+}
+
+#image10 {
+
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+#image10 img {
+
+	width: 30px;
+}
+
+#copybox10  {
+
+	position: absolute;
+	top: 10px;
+	right: 60px;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	display: none;
+}
+
+#copybox10 a {
+
+	color: white;
+	text-decoration: none;
+}
+
+#copybox10 a:hover {
+
+	color: orange;
+}
+
+
+
 
 
 
